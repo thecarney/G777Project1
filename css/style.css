@@ -1,0 +1,20 @@
+/* Stylesheet by J Carney, 2018 */
+
+body {
+    padding-top: 0px;
+    -webkit-padding-before: 0px;
+	overflow: hidden;
+}
+
+.bg-custom-darkblue {
+    background-color: #0056b3;
+}
+
+
+#mainCard {
+    height: 100vh;
+}
+
+#map {
+    height: 100%;
+}

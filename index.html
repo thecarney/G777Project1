@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>G777 Project 1</title>
+
+    <!-- Font Awesome 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome 5 -->
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+    <!--bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <!--Material Design Bootstrap-->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <!--ARCGIS JAVASCRIPT 3.XX (2D only)-->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <!--my css-->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+    <nav	class="navbar bg-dark navbar-dark navbar-expand-sm mb-0 fixed-top z-depth-1 "  id="header1">
+        <div class="container-fluid mx-2">
+            <a class="navbar-brand animated zoom" href="http://thecarney.github.io"><img class="figure-img mb-0 mr-0 " src="img/logo_white_minimal.svg" alt="logo " width="30px "/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myTogglerNav"><span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse text-right " id="myTogglerNav">
+                <div class="navbar-nav ml-auto ">
+                    <a class="nav-item nav-link " href="http://thecarney.github.io">Home</a>
+                    <a class="nav-item nav-link " href="http://thecarney.github.io/Projects.html">Projects</a>
+                    <a class="nav-item nav-link " href="http://thecarney.github.io/Resume.html">Resume</a>
+                    <a class="nav-item nav-link " href="http://thecarney.github.io/About.html">About</a>
+                    <a class="nav-item nav-link " href="http://thecarney.github.io/Contact.html">Contact</a>
+                </div><!-- navbar -->
+            </div><!-- collapse -->
+        </div><!-- container -->
+    </nav>
+</header>
+<!-- Navbar -->
+
+<!-- MAIN -->
+<main role="main">
+
+    <!-- Splash Modal -->
+    <div class="modal fade" id="splashModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text" id="exampleModalLabel"><strong>Geography 777 Project 1</strong></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body h6">
+                    Hello World!!!</p>
+                </div>
+                <div class="modal-footer flex-column align-content-center">
+                    <button type="button" class="btn btn-indigo btn-sm" data-dismiss="modal">Get Started!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAP PAGE -->
+    <div class="container-fluid p-4 mb-3 mt-5 fadeIn" id="mainContainer">
+        <div class="row" id="rowParent">
+
+            <!-- PANEL -->
+
+
+            <!-- MAP CARD -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card p-1" id="mainCard">
+                            <div class="card-img text-center rounded" id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- MAP PAGE -->
+
+</main>
+<!-- MAIN -->
+
+<!-- FOOTER -->
+<footer class="navbar bg-dark navbar-dark navbar-expand-sm mb-0 box-shadow fixed-bottom" id="footer1">
+    <p class="navbar-nav ml-auto text-muted font-weight-light h6 "><small>© James Carney</small></p>
+</footer>
+<!-- FOOTER -->
+
+<!-- device size tester -->
+<div id="device-size-detector">
+    <div id="xs" class="d-block d-sm-none"></div>
+    <div id="sm" class="d-none d-sm-block d-md-none"></div>
+    <div id="md" class="d-none d-md-block d-lg-none"></div>
+    <div id="lg" class="d-none d-lg-block d-xl-none"></div>
+    <div id="xl" class="d-none d-xl-block"></div>
+</div>
+<!-- device size tester -->
+
+<!--bootstap 4 scripts-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+<!-- material design bootstrap core JavaScript -->
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+<!--ARCGIS JAVASCRIPT 3.XX (2D only)-->
+<script src="https://js.arcgis.com/3.27/"></script>
+<!--my scripts-->
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
