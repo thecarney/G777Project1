@@ -3,18 +3,62 @@
 body {
     padding-top: 0px;
     -webkit-padding-before: 0px;
-	overflow: hidden;
+	/*overflow: hidden;*/
+    /*overflow: hidden;*/
 }
 
-.bg-custom-darkblue {
-    background-color: #0056b3;
+.bg-custom-darkblue {background-color: #0056b3;}
+
+#mainCard {height: 100vh;}
+
+#panelCard {height: 100vh;}
+
+#map {height: 100%;}
+
+#HomeButton {
+    position: absolute;
+    top: 90px;
+    left: 18px;
+    z-index: 50;
+    border-radius: 5px;
+    text-align: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
-
-#mainCard {
-    height: 100vh;
+#basemapToggle {
+    position: absolute;
+    top: 128px;
+    left: 18px;
+    z-index: 50;
+    border-radius: 5px;
+    text-align: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
-#map {
-    height: 100%;
+#runButton {
+    border-radius: 4px;
+    margin: 0px;
+    margin-left: 1px;
 }
+
+#layerListPane{width: auto;}
+
+.esriLayer{background-color: #fff;}
+
+.esriLayerList .esriList{border-top:none;}
+
+.esriLayerList .esriTitle {
+    background-color: #fff;
+    border-bottom:none;
+    padding-right: 6px;
+}
+.esriLayerList .esriList ul{background-color: #fff;}
+
+
+

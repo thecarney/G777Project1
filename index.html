@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<!--<html lang="en">-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,13 +10,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font Awesome 5 -->
     <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>
+
+    <!--ARCGIS JAVASCRIPT 3.XX (2D only)-->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/dijit/themes/claro/claro.css">
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/dijit/calcite.css">-->
+    <!--<link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/esri/esri.css">-->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+
     <!--bootstrap 4-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">    <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.0/css/mdb.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
     <!--Material Design Bootstrap-->
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <!--ARCGIS JAVASCRIPT 3.XX (2D only)-->
-    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet">
+
     <!--my css-->
     <link rel="stylesheet" href="css/style.css">
 
@@ -47,27 +55,55 @@
 <!-- MAIN -->
 <main role="main">
 
-    <!-- Splash Modal -->
-    <div class="modal fade" id="splashModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- Desc Modal -->
+    <div class="modal fade" id="modalDescription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title text" id="exampleModalLabel"><strong>Geography 777 Project 1</strong></h4>
+                    <h5 class="modal-title" id="exampleModalLabel">Description</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body h6">
-                    Hello World!!!</p>
+                <div class="modal-body">
+                    <div class="pl-1">Users can specify a Power value and the tool will use an Inverse Distance Weighted
+                        model to create a prediction surface for nitrate concentration within each bin in the hex map.
+                        A continuous linear regression is then performed to explore whether nitrate concentration is a
+                        good explanatory variable for cancer rates given the provided Power value. <br><br>The
+                        layers widget provides for exploratory interaction with the results. The Cancer Rate layer is
+                        included as an overlay which may be revealed using the slider handle. </div>
                 </div>
-                <div class="modal-footer flex-column align-content-center">
-                    <button type="button" class="btn btn-indigo btn-sm" data-dismiss="modal">Get Started!</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Loading Data Modal -->
+    <div class="modal fade" id="modalLoadingData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLoadingDataTitle">Loading...</h5><i class="fas fa-spinner fa-spin fa-2x"></i>
+                </div>
+                <div class="modal-body">
+
+                    <div></div>
+                    <div class="pl-1">Your is being performed on the server. This window will close when the results are received.</div>
+                </div>
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Close</button>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- MAP PAGE -->
+
+
     <div class="container-fluid p-4 mb-3 mt-5 fadeIn" id="mainContainer">
         <div class="row" id="rowParent">
 
@@ -77,18 +113,91 @@
             <!-- MAP CARD -->
             <div class="col-12">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-9">
                         <div class="card p-1" id="mainCard">
-                            <div class="card-img text-center rounded" id="map"></div>
+                            <div class="card-img text-center rounded map" id="map">
+                                <div class="primary" id="layerSwipeWidgetDIV"></div>
+                                <button id="HomeButton" type="button" class="btn btn-blue-grey btn-sm" aria-pressed="false" data-toggle="tooltip" data-placement="right" autocomplete="off" title="Reset Extent"><i class="fas fa-home fa-2x"></i></button>
+                                <!--<button id="legendToggle" data-popover-content="#po1" type="button" class="btn btn-blue-grey btn-sm" data-toggle="tooltip" data-placement="right" aria-pressed="false" autocomplete="off" title="View Legend"><i class="fas fa-map-signs fa-2x"></i></button>-->
+                                <button id="basemapToggle" data-popover-content="#po2" type="button" class="btn btn-blue-grey btn-sm" data-toggle="tooltip" data-placement="right" aria-pressed="false" autocomplete="off" title="Change Basemap"><i class="fas fa-globe-americas fa-2x"></i></button>
+                                <!--<button id="layerListToggle" data-popover-content="#po3" type="button" class="btn btn-blue-grey btn-sm" data-toggle="tooltip" data-placement="right" aria-pressed="false" autocomplete="off" title="Layers"><i class="fas fa-tasks fa-2x"></i></button>-->
+
+
+
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-3">
+                        <div class="card p-2" id="panelCard">
+                            <div class="pl-1 py-1 h5"><strong>Cancer and Nitrate Explorer</strong></div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#modalDescription" id="seeDescbtn">
+                                See Description
+                            </button>
+
+                            <div class="pl-1 mt-4 h6">New Analysis</div>
+
+                            <form class="form-horizontal">
+
+                                <div class="form-group">
+
+                                    <div class="input-group input-group-sm mb-3 pl-1 pr-1">
+                                        <input type="number" min="1" pattern="[0-9]" onkeypress="return !(event.charCode == 46)" step="1" class="form-control flex-center" id="userEnteredPower" placeholder="Integer >= 1" aria-label="Integer >= 1" aria-describedby="basic-addon2" required>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark btn-sm" type="button" id="runButton">Run</button>
+                                        </div>
+                                        <small id="inputHelpText" class="form-text text-muted">Enter Power for IDW analysis, click Run.</small>
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+
+
+
+                            <div class="pl-1 mt-4 h6 py-1">Layers</div>
+                            <div class="claro">
+                                <div class="container" >
+                                    <div id="layerListPane" >
+                                        <div id="layerList"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-
         </div>
     </div>
     <!-- MAP PAGE -->
+
+    <div class="hidden" id="po1">
+        <div class="popover-heading">
+           Legend
+        </div>
+        <div class="popover-body" id="legendDiv">
+        </div>
+    </div>
+
+    <div class="hidden" id="po2">
+        <div class="popover-heading">
+            Basemaps
+        </div>
+        <div class="popover-body" id="basemapGallery">
+            <div id="basemapSelectorButtons" class="btn-group-vertical">
+                <button id="bm1" type="button" class="btn btn-sm btn-indigo ml-0">Gray</button>
+                <button id="bm2" type="button" class="btn btn-sm btn-indigo">Hybrid</button>
+                <button id="bm3" type="button" class="btn btn-sm btn-indigo">Streets</button>
+                <button id="bm4" type="button" class="btn btn-sm btn-indigo">Topo</button>
+            </div>
+        </div>
+    </div>
+
+
+
 
 </main>
 <!-- MAIN -->
@@ -110,13 +219,14 @@
 <!-- device size tester -->
 
 <!--bootstap 4 scripts-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- material design bootstrap core JavaScript -->
-<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
+<!--<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>-->
 <!--ARCGIS JAVASCRIPT 3.XX (2D only)-->
+<script>var dojoConfig = { parseOnLoad: true };</script>
 <script src="https://js.arcgis.com/3.27/"></script>
 <!--my scripts-->
 <script type="text/javascript" src="js/main.js"></script>
