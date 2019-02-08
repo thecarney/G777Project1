@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71722d88-2ff2-4b9e-a68c-e75468b73b3a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
@@ -21,41 +20,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/main.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="386" column="47" lean-forward="true" selection-start-line="386" selection-start-column="47" selection-end-line="386" selection-end-column="47" />
+            <state relative-caret-position="848">
+              <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
               <folding>
-                <element signature="e#2481#2920#0" />
-                <element signature="e#2675#3211#0" />
-                <element signature="e#4079#4514#0" />
-                <element signature="e#4586#5020#0" />
-                <element signature="e#4609#5210#0" />
-                <element signature="e#5802#6332#0" />
-                <element signature="e#5299#7388#0" />
-                <element signature="e#5386#5590#0" />
-                <element signature="e#5642#6984#0" />
-                <element signature="e#7076#7179#0" />
-                <element signature="e#7359#9142#0" />
-                <element signature="e#8286#8490#0" />
-                <element signature="e#12052#12079#0" />
-                <element signature="e#13192#15670#0" />
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#3604#3611#1" expanded="true" />
+                <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1184">
-              <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+            <state relative-caret-position="-97">
+              <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
               <folding>
-                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#3604#3611#1" expanded="true" />
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="e#2471#3471#0" />
+                <element signature="e#3608#4236#0" />
+                <element signature="e#5055#5490#0" />
+                <element signature="e#8545#8805#0" />
+                <element signature="e#8890#9413#0" />
+                <element signature="e#9492#11723#0" />
+                <element signature="e#9530#9736#0" />
+                <element signature="e#10561#11054#0" />
+                <element signature="e#11600#11921#0" />
+                <element signature="e#11838#14356#0" />
+                <element signature="e#14616#14822#0" />
+                <element signature="e#17002#17102#0" />
+                <element signature="e#22427#22801#0" />
+                <element signature="e#25011#25083#0" />
+                <element signature="n#!!block;n#resize#0" />
               </folding>
             </state>
           </provider>
@@ -64,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://C:/TEMP777/PROJ1/P1APP/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="53" lean-forward="true" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+            <state relative-caret-position="448">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -73,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+            <state relative-caret-position="-142">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -92,6 +95,8 @@
     <findStrings>
       <find>map</find>
       <find>legendDiv</find>
+      <find>requestSend</find>
+      <find>errback</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -109,9 +114,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="-144" />
+    <option name="y" value="51" />
     <option name="width" value="974" />
-    <option name="height" value="1177" />
+    <option name="height" value="1163" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -125,6 +131,11 @@
             <path>
               <item name="G777Project1" type="b2602c69:ProjectViewProjectNode" />
               <item name="G777Project1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="G777Project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G777Project1" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="G777Project1" type="b2602c69:ProjectViewProjectNode" />
@@ -175,17 +186,22 @@
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/G777Project1/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="C:/TEMP777/PROJ1/P1APP/index.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/main.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Node.js.main.js" />
+      <item itemvalue="Node.js.index.js" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Node.js.main.js" />
+        <item itemvalue="Node.js.index.js" />
       </list>
     </recent_temporary>
   </component>
@@ -203,22 +219,24 @@
       <workItem from="1548735267705" duration="24713000" />
       <workItem from="1549036321899" duration="4719000" />
       <workItem from="1549051686084" duration="81279000" />
+      <workItem from="1549344018847" duration="62737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115129000" />
+    <option name="totallyTimeSpent" value="177866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.123667374" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.28739315" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953465" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.328585" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" weight="0.2811016" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" visible="true" weight="0.15384616" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -232,13 +250,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.123667374" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28739315" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953465" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.328585" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" visible="true" weight="0.2811016" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" visible="true" weight="0.2835249" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -257,26 +275,11 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/1.js" />
-    <entry file="file://$PROJECT_DIR$/data/wellNitrate_wm.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/well_nitrate.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret column="1308" lean-forward="true" selection-start-column="1300" selection-end-column="1308" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/hex50cancer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-608">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/data/wellNitrate_wm.json" />
+    <entry file="file://$PROJECT_DIR$/data/well_nitrate.json" />
+    <entry file="file://$PROJECT_DIR$/data/hex50cancer.json" />
+    <entry file="file://$PROJECT_DIR$/data/wellNitrate_wm.geojson">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/data/hex50cancer.geojson">
       <provider selected="true" editor-type-id="text-editor">
@@ -285,23 +288,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/wellNitrate_wm.geojson">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/data/resultsTemplate.geojson">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        <state relative-caret-position="64">
+          <caret column="981" selection-start-column="967" selection-end-column="981" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+        <state relative-caret-position="848">
+          <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="e#3604#3611#1" expanded="true" />
+            <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
@@ -310,30 +323,31 @@
     </entry>
     <entry file="file://C:/TEMP777/PROJ1/P1APP/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="53" lean-forward="true" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        <state relative-caret-position="448">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="386" column="47" lean-forward="true" selection-start-line="386" selection-start-column="47" selection-end-line="386" selection-end-column="47" />
+        <state relative-caret-position="-97">
+          <caret line="183" lean-forward="true" selection-start-line="183" selection-end-line="183" />
           <folding>
-            <element signature="e#2481#2920#0" />
-            <element signature="e#2675#3211#0" />
-            <element signature="e#4079#4514#0" />
-            <element signature="e#4586#5020#0" />
-            <element signature="e#4609#5210#0" />
-            <element signature="e#5802#6332#0" />
-            <element signature="e#5299#7388#0" />
-            <element signature="e#5386#5590#0" />
-            <element signature="e#5642#6984#0" />
-            <element signature="e#7076#7179#0" />
-            <element signature="e#7359#9142#0" />
-            <element signature="e#8286#8490#0" />
-            <element signature="e#12052#12079#0" />
-            <element signature="e#13192#15670#0" />
+            <element signature="e#2471#3471#0" />
+            <element signature="e#3608#4236#0" />
+            <element signature="e#5055#5490#0" />
+            <element signature="e#8545#8805#0" />
+            <element signature="e#8890#9413#0" />
+            <element signature="e#9492#11723#0" />
+            <element signature="e#9530#9736#0" />
+            <element signature="e#10561#11054#0" />
+            <element signature="e#11600#11921#0" />
+            <element signature="e#11838#14356#0" />
+            <element signature="e#14616#14822#0" />
+            <element signature="e#17002#17102#0" />
+            <element signature="e#22427#22801#0" />
+            <element signature="e#25011#25083#0" />
+            <element signature="n#!!block;n#resize#0" />
           </folding>
         </state>
       </provider>

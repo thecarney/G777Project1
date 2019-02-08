@@ -3,7 +3,7 @@
 body {
     padding-top: 0px;
     -webkit-padding-before: 0px;
-	/*overflow: hidden;*/
+	overflow: hidden !important;
     /*overflow: hidden;*/
 }
 
@@ -60,5 +60,6 @@ body {
 }
 .esriLayerList .esriList ul{background-color: #fff;}
 
-
-
+#layerSwipeWidgetDIV {
+    margin-top: -4px;
+}
