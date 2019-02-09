@@ -196,7 +196,7 @@ function map() {
             function getDataCancer() {
                 let request = esriRequest({
                     //location of data
-                    url: "data/resultsTemplate.geojson",
+                    url: "data/resultsTemplate_simple.json",
                     handleAs: "json"
                 });
                 console.log("got CANCER json");
