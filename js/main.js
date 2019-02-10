@@ -10,12 +10,11 @@ function initialize() {
         $('[data-toggle="tooltip"]').tooltip({trigger: "hover"})
     });
 
-    // resize function wraps the main function to allow responsive sizing
+    // resize function wraps the main function to allow responsive sizing of panel with map
     resize(map());
 }
 
-// Main script. All functions except "resize" are within map(). This main function returns the map object to allow the
-// resize function to work.
+// Main
 function map() {
     require(["esri/map", "dojo/dom", "dojo/on", "dojo/dom-class", "dojo/_base/json", "esri/config", "esri/request",
             "esri/graphic", "esri/layers/FeatureLayer", "esri/tasks/FeatureSet", "esri/geometry/jsonUtils",
@@ -30,7 +29,7 @@ function map() {
                   Polygon, Extent, InfoTemplate, Color, SimpleFillSymbol, SimpleLineSymbol, BasemapGallery, HomeButton,
                   Scalebar, LayerList, LayerSwipe, ClassBreaksRenderer) {
 
-            // store some key info
+            // helper vars
             var map;
             var lastRequestedPower;
             var layerLegendWidget;
@@ -43,7 +42,7 @@ function map() {
             // add scalebar
             let scalebar = new Scalebar({map: map, scalebarUnit: "dual"});
 
-            // reset extent listener
+            // make listener for button to reset map extent
             $("#HomeButton").click(function () {
                 map.centerAndZoom([-89.9926, 44.7318], 7);
             });
@@ -51,7 +50,8 @@ function map() {
             // switch basemaps within a popover
             $("#basemapToggle").popover({
                 html: true,
-                content: function () {  // set the correct button to "active" when popover opens
+                // set the correct button to "active" when popover opens
+                content: function () {
                     if (map.getBasemap() == "gray") {
                         $("#bm1").addClass("active").siblings().removeClass("active");
                     } else if (map.getBasemap() == "hybrid") {
@@ -88,25 +88,23 @@ function map() {
 
             // promise chain for loading default data
             map.on("load", function () {
-                console.log("call WELL functions");
-                getDataCancer()
-                    .then(createGraphicsCancer)
-                    .then(createLayerCancer)
-                    .then(getDataWellPoints)
-                    .then(createGraphicsWellPoints)
-                    .then(createLayerWellPoints)
-                    .then(createLayerWidget)
-                    .then(runUserAnalysis)
-                    .otherwise(errback);
+                getDataCancer()  // site resource
+                    .then(createGraphicsCancer)  // graphics array
+                    .then(createLayerCancer)  // feature layer
+                    .then(getDataWellPoints)  // site resource
+                    .then(createGraphicsWellPoints)  // graphics array
+                    .then(createLayerWellPoints)  // feature layer
+                    .then(createLayerWidget)  // legend/opacity/layertoggle
+                    .then(runUserAnalysis)  // setup custom analysis
+                    .otherwise(errback);  // catch
             });
 
-            // load well points json -- data is static and so loaded as a resource of the website
+            // load well points json -- data is resource of the website
             function getDataWellPoints() {
                 let request = esriRequest({
                     url: "data/wellNitrate_wm.geojson",
                     handleAs: "json"
                 });
-                console.log("got WELL json");
                 return request;
             }
 
@@ -126,7 +124,6 @@ function map() {
                         }
                     );
                 });
-                console.log("made WELL graphics");
                 return graphics;
             }
 
@@ -178,17 +175,18 @@ function map() {
                     id: "Inputs  |  Well Sample Data"
                 });
 
+                // point feature renderer
                 let thisRenderer = new SimpleRenderer(new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 7, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([200, 200, 200]), 0.5), new Color([80, 80, 80])));
-
+                // apply renderer
                 layerWells.setRenderer(thisRenderer);
-
 
                 // add to map
                 map.addLayer(layerWells);
+
                 // store layer id
                 layerIdList.push("Inputs  |  Well Sample Data");
 
-                console.log("made WELLS layer");
+                // return
                 return layerWells;
             }
 
@@ -199,13 +197,12 @@ function map() {
                     url: "data/resultsTemplate_simple.json",
                     handleAs: "json"
                 });
-                console.log("got CANCER json");
                 return request;
             }
 
             // make graphics for cancer
             function createGraphicsCancer(response) {
-
+                // Graphics array
                 let graphics = arrayUtils.map(response.features, function (feature, i) {
                     return new Graphic(
                         new Polygon({
@@ -217,12 +214,12 @@ function map() {
                         }
                     );
                 });
-                console.log("made CANCER graphics");
                 return graphics;
             }
 
             // make layer for cancer
             function createLayerCancer(graphics) {
+                // feature collection from graphics
                 let featureCollection = {
                     "layerDefinition": null,
                     "featureSet": {
@@ -230,13 +227,13 @@ function map() {
                         "geometryType": "esriGeometryPolygon"
                     }
                 };
-
+                // polygon renderer
                 let rendererCancer = new SimpleRenderer(new SimpleFillSymbol().setOutline(new SimpleLineSymbol().setWidth(0.25).setColor(new Color([128, 128, 128]))));
                 rendererCancer.setColorInfo({
                     field: "meanCancerRate",
                     minDataValue: 0,
                     maxDataValue: 1,
-                    colors: [
+                    colors: [  // orange color ramp
                         new Color([255, 247, 236]),
                         new Color([254, 232, 200]),
                         new Color([252, 212, 158]),
@@ -249,6 +246,7 @@ function map() {
                     ]
                 });
 
+                // set layer definition
                 featureCollection.layerDefinition = {
                     "geometryType": "esriGeometryPolyon",
                     "objectIdField": "OBJECTID",
@@ -266,6 +264,7 @@ function map() {
                     }]
                 };
 
+                // popup info
                 let popupTemplate = new PopupTemplate({
                     title: "Bin ID: {OBJECTID}",
                     fieldInfos: [
@@ -273,12 +272,13 @@ function map() {
                     ]
                 });
 
+                // make layer with popup
                 let layerCancer = new FeatureLayer(featureCollection, {
                     infoTemplate: popupTemplate,
                     id: "Inputs  |  Mean Cancer Rate by Bin"
                 });
 
-                // apply renderer
+                // apply renderer and default opacity
                 layerCancer.setRenderer(rendererCancer);
                 layerCancer.setOpacity(.99);
 
@@ -288,14 +288,12 @@ function map() {
                 // add to map
                 map.addLayer(layerCancer);
 
-                console.log("made CANCER layer");
+                // return
                 return layerCancer;
             }
 
             // make graphics for new user-defined layers
             function createGraphicsCustom([lyrType, response]) {
-                //let geoJson = response.data;
-
                 // store min and max values for each field to be passed to renderer for color ramp scaling
                 let meanCancerRateMIN = Infinity;
                 let meanCancerRateMAX = -Infinity;
@@ -306,6 +304,7 @@ function map() {
                 let stdresidMIN = Infinity;
                 let stdresidMAX = -Infinity;
 
+                // loop to set min/max
                 let graphics = arrayUtils.map(response.features, function (feature, i) {
 
                     if (feature.properties.meanCancerRate < meanCancerRateMIN) {
@@ -336,6 +335,7 @@ function map() {
                         stdresidMAX = feature.properties.STDRESID;
                     }
 
+                    // graphics array
                     return new Graphic(
                         new Polygon({
                             rings: feature.geometry.coordinates
@@ -350,20 +350,9 @@ function map() {
                         }
                     );
                 });
-                console.log("made CUSTOM graphcics");
 
-                console.log(meanCancerRateMIN);
-                console.log(meanCancerRateMAX);
-                console.log(predictedMIN);
-                console.log(predictedMAX);
-                console.log(residualMIN);
-                console.log(residualMAX);
-                console.log(stdresidMIN);
-                console.log(stdresidMAX);
-
-
+                // call layer create function and pass args
                 createLayerCustom([lyrType, graphics, meanCancerRateMIN, meanCancerRateMAX, predictedMIN, predictedMAX, residualMIN, residualMAX, stdresidMIN, stdresidMAX]);
-                // return [lyrType,graphics,meanCancerRateMIN,meanCancerRateMAX,predictedMIN,predictedMAX,residualMIN,residualMAX,stdresidMIN,stdresidMAX];
             }
 
             // make layer for new user-defined layers
@@ -440,10 +429,8 @@ function map() {
                 // defines a renderer (symbology) for the layer
                 let thisRenderer;
 
+                // color ramps maker
                 if (new String(lyrType).valueOf() == new String("Predicted Cancer Rate").valueOf()) {
-                    console.log("make a prediction layer");
-                    console.log(min2);
-                    console.log(max2);
                     // PURPLE color ramp renderer for predicted cancer rates
                     thisRenderer = new SimpleRenderer(new SimpleFillSymbol().setOutline(new SimpleLineSymbol().setWidth(0.25).setColor(new Color([128, 128, 128]))));
                     thisRenderer.setColorInfo({
@@ -463,7 +450,6 @@ function map() {
                         ]
                     });
                 } else {
-                    console.log("make a standard residuals layer");
                     // RED-WHITE-BLUE class breaks renderer for standard residuals
                     let simpleSymbol = new SimpleFillSymbol().setOutline(new SimpleLineSymbol().setWidth(0.25).setColor(new Color([128, 128, 128])));
                     //thisRenderer = new ClassBreaksRenderer(simpleSymbol);
@@ -491,9 +477,6 @@ function map() {
 
                 // make new legend
                 createLayerWidget();
-
-                console.log("made CUSTOM layer");
-                //return layerCustom;
             }
 
 
@@ -509,8 +492,6 @@ function map() {
                             visibility: true
                         };
                     });
-
-                    console.log(newLayersForLegend);
 
                     // make Layer List Widget
                     let layerList = new LayerList({
@@ -542,37 +523,22 @@ function map() {
                         };
                     });
 
+                    // push new layers and refresh
                     layerLegendWidget.layers = newLayersForLegend;
                     layerLegendWidget.refresh();
-
-                    console.log('legend subsequent call attempt');
                 }
-            }
-
-            // widget for swiping the cancer prediction surface
-            function createLayerSwipeWidget() {
-                let sliderPosition = parseInt($("#map").width() / 2);
-                let layerSwipe = new LayerSwipe({
-                    type: "vertical",
-                    top: 0,
-                    left: sliderPosition,
-                    map: map,
-                    layers: [map.getLayer("Cancer_Rate").id]
-                }, "layerSwipeWidgetDIV");
-                layerSwipe.startup();
             }
 
             // process user request for new analysis
             function runUserAnalysis() {
                 // based on localtunnel url
-                let baseURL = "https://geog777proj01.localtunnel.me/idw/";
+                let baseURL = "https://geog777proj01.localtunnel.me/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
 
                 // get user param
                 $("#runButton").click(function () {
                     let specifiedPower = $("#userEnteredPower").val();
                     let urlWithPower = baseURL + specifiedPower;
                     let requestSend = 0;
-                    console.log(specifiedPower);
 
                     if (new String(specifiedPower).valueOf() == "0") {  // need val 1 or greater
                         requestSend = 0;
@@ -584,33 +550,8 @@ function map() {
                         lastRequestedPower = specifiedPower;
                         let modalTracker = 1;
 
-                        console.log(dummyResource);
-
                         // open simple loading modal
-                        //$("#modalLoadingData").modal({backdrop: "static", keyboard: false});
                         $("#modalLoadingData").modal("show");
-
-
-                        // setTimeout(function () {
-                        //     $("#modalLoadingData").modal("hide");
-                        // }, 5000);
-
-
-                        // THIS BLOCK WORKS   :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)
-                        // //  request and await response
-                        //     fetch(dummyResource).then(function (response) { return response.json();})
-                        //         .then(function(newJSON){
-                        //             //let newJSON = response.data();
-                        //             let newLayerJSON = JSON.parse(newJSON);
-                        //             // call layer builders
-                        //             createGraphicsCustom(["Predicted Cancer Rate", newLayerJSON]);
-                        //             createGraphicsCustom(["Standardized Residuals", newLayerJSON]);
-                        //             // close loader modal
-                        //             $("#modalLoadingData").modal("hide");
-                        //             console.log("got response");
-                        //         });
-                        // THIS BLOCK WORKS   :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)    :-)
-
 
                         //  request and await response
                         fetch(dummyResource).then(function (response) {
@@ -619,14 +560,13 @@ function map() {
                             }
                             throw new Error("Network response was not ok.");
                         }).then(function (newJSON) {
-                            //let newJSON = response.data();
-                            let newLayerJSON = JSON.parse(newJSON);
+                            // use result
+                            let newLayerJSON = newJSON;
                             // call layer builders
                             createGraphicsCustom(["Predicted Cancer Rate", newLayerJSON]);
                             createGraphicsCustom(["Standardized Residuals", newLayerJSON]);
                             // close loader modal
                             $("#modalLoadingData").modal("hide");
-                            console.log("got response");
                         }).catch(function (error) {
                             // timeout to improve user feedback experience
                             setTimeout(function () {
@@ -654,7 +594,6 @@ function resize(map) {
     $(window).on("resize", function () {
 
         // make map height responsive to available space
-        //   get heights
         let navbarHeight = $("#header1").outerHeight();
         let footerHeight = $("#footer1").outerHeight();
         let windowHeight = $(window).outerHeight();
