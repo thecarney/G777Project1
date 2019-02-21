@@ -106,7 +106,6 @@
             </div>
         </div>
     </div>
-
     <!-- Print Modal -->
     <div class="modal fade" id="modalPrintScreen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -130,10 +129,34 @@
             </div>
         </div>
     </div>
-
-
-
-
+    <!-- Interpretation Modal -->
+    <div class="modal fade" id="modalInterpretation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="interpretationModalLabel">Nitrate and Cancer Relationship?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pl-1">You'll notice that the standardized error layers have many bins where the predicted
+                        cancer rate (based on the IDW-generated nitrate prediction surface) shows significant error
+                        compared to the measured cancer rates, both over- and under-estimation.
+                        As you run more analyses, the standardized error map continues to show a similar pattern.<br><br>
+                        This can be visually confirmed by comparing the predicted cancer rate layers from each analysis to the default mean cancer
+                        rate layer, where you'll note that the cancer hotspots and nitrate hotspots do not align well. <br><br>
+                        Based on the simple parameters of this analysis, the results indicate that nitrate is not
+                        a good predictor for cancer (at least by itself), and that there are very likely other important independent
+                        variables which need to be identified and considered.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- MAP PAGE -->
     <div class="container-fluid p-4 mb-3 mt-5 fadeIn" id="mainContainer">
         <div class="row" id="rowParent">
@@ -156,6 +179,7 @@
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#modalDescription" id="seeDescbtn" data-html2canvas-ignore="true" >See Description</button>
                             <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#modalPrintScreen" id="seePrintScreenbtn" data-html2canvas-ignore="true" >Print Map View to PNG</button>
+                            <button type="button" class="btn btn-blue-grey btn-sm d-none" data-toggle="modal" data-target="#modalInterpretation" id="seeInterpretationbtn" data-html2canvas-ignore="true" >Interpretation Assistance (Spoilers!)</button>
                             <!-- Analysis -->
                             <div class="pl-1 mt-4 h6" data-html2canvas-ignore="true" >New Analysis</div>
                             <form class="form-horizontal" onsubmit="return false;" data-html2canvas-ignore="true" >

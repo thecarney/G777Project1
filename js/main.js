@@ -86,7 +86,7 @@ function map() {
                 }
             });
 
-            // setup printer (html2canvas)  -------------------------------------------------------------------------------------------------------
+            // setup printer (html2canvas)
             $("#printScreenButton").click(function() {
                 html2canvas(document.querySelector("#mainContainer")).then(canvas => {
                     let url = canvas.toDataURL();
@@ -544,9 +544,8 @@ function map() {
 
             // process user request for new analysis
             function runUserAnalysis() {
-                // based on localtunnel url
-                //let baseURL = "https://geog777proj01.localtunnel.me/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
-                let baseURL = "https://thecarney.ngrok.io/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
+                // based on ngrok url
+                let baseURL = "https://thecarney.ngrok.io/idw/";  // MUST MATCH NGROK SUBDOMAIN
 
                 // get user param
                 $("#runButton").click(function () {
@@ -581,6 +580,7 @@ function map() {
                             createGraphicsCustom(["Standardized Residuals", newLayerJSON]);
                             // close loader modal
                             $("#modalLoadingData").modal("hide");
+                            $("#seeInterpretationbtn").removeClass('d-none');
                         }).catch(function (error) {
                             // timeout to improve user feedback experience
                             setTimeout(function () {
