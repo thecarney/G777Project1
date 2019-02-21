@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="548" column="73" selection-start-line="548" selection-start-column="73" selection-end-line="548" selection-end-column="73" />
+            <state relative-caret-position="251">
+              <caret line="549" lean-forward="true" selection-start-line="549" selection-end-line="549" />
               <folding>
                 <element signature="e#2229#2303#0" />
                 <element signature="e#2395#3491#0" />
@@ -91,7 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="48" />
     <option name="width" value="1934" />
@@ -200,24 +200,24 @@
       <workItem from="1549344018847" duration="73615000" />
       <workItem from="1549787740305" duration="610000" />
       <workItem from="1549840151769" duration="23000" />
-      <workItem from="1550678272982" duration="12491000" />
+      <workItem from="1550678272982" duration="12701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201868000" />
+    <option name="totallyTimeSpent" value="202078000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="48" width="1934" height="1129" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1186" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14240506" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14225501" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953465" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.328585" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" visible="true" weight="0.25401607" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" visible="true" weight="0.2402659" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -316,8 +316,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="548" column="73" selection-start-line="548" selection-start-column="73" selection-end-line="548" selection-end-column="73" />
+        <state relative-caret-position="251">
+          <caret line="549" lean-forward="true" selection-start-line="549" selection-end-line="549" />
           <folding>
             <element signature="e#2229#2303#0" />
             <element signature="e#2395#3491#0" />

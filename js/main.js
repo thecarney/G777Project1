@@ -546,7 +546,7 @@ function map() {
             function runUserAnalysis() {
                 // based on localtunnel url
                 //let baseURL = "https://geog777proj01.localtunnel.me/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
-                let baseURL = "https://thecarney.tunnel.ngrok.io.ngrok.io/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
+                let baseURL = "https://thecarney.ngrok.io/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
 
                 // get user param
                 $("#runButton").click(function () {
