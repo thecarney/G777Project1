@@ -37,7 +37,7 @@ function map() {
             var legendCounter = 0;
 
             // make map
-            map = new Map("map", {basemap: "gray", center: [-89.9926, 44.7318], zoom: 7});
+            map = new Map("map", {basemap: "gray", center: [-89.9926, 44.7318], zoom: 7}); //gray
 
             // add scalebar
             let scalebar = new Scalebar({map: map, scalebarUnit: "dual"});
@@ -84,6 +84,19 @@ function map() {
                     map.setBasemap("topo");
                     $(this).addClass("active").siblings().removeClass("active");
                 }
+            });
+
+            // setup printer (html2canvas)  -------------------------------------------------------------------------------------------------------
+            $("#printScreenButton").click(function() {
+                html2canvas(document.querySelector("#mainContainer")).then(canvas => {
+                    let url = canvas.toDataURL();
+                    let triggerDownload = $("<a>").attr("href", url).attr("download",name+".png").appendTo("body");
+                    triggerDownload[0].click();
+                    triggerDownload.remove();
+                    $("#modalPrintScreen").modal("hide");
+                    console.log("print screen attempt");
+                    //document.body.appendChild(canvas)
+                });
             });
 
             // promise chain for loading default data
@@ -532,7 +545,8 @@ function map() {
             // process user request for new analysis
             function runUserAnalysis() {
                 // based on localtunnel url
-                let baseURL = "https://geog777proj01.localtunnel.me/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
+                //let baseURL = "https://geog777proj01.localtunnel.me/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
+                let baseURL = "thecarney.tunnel.ngrok.io/idw/";  // MUST MATCH EXPRESS LOCALTUNNEL SUBDOMAIN
 
                 // get user param
                 $("#runButton").click(function () {

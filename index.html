@@ -106,6 +106,34 @@
             </div>
         </div>
     </div>
+
+    <!-- Print Modal -->
+    <div class="modal fade" id="modalPrintScreen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="printScreenModalLabel">Export (Print) Map View to PNG</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pl-1">This print tool will save a PNG of the current map and legend view. Because this
+                        project was built specifically to avoid the need for an ArcGIS Server instance, this print tool
+                        cannot render the basemap, but will render feature layers and any open info windows (popups).<br><br>
+                        Use the button below to close this modal and execute the print. </div>
+                    <div class="col text-center"><button type="button" class=" btn btn-primary btn-sm" id="printScreenButton">Print</button></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- MAP PAGE -->
     <div class="container-fluid p-4 mb-3 mt-5 fadeIn" id="mainContainer">
         <div class="row" id="rowParent">
@@ -117,8 +145,8 @@
                         <div class="card p-1" id="mainCard">
                             <div class="card-img text-center rounded map" id="map">
                                 <div class="primary" id="layerSwipeWidgetDIV"></div>
-                                <button id="HomeButton" type="button" class="btn btn-blue-grey btn-sm" aria-pressed="false" data-toggle="tooltip" data-placement="right" autocomplete="off" title="Reset Extent"><i class="fas fa-home fa-2x"></i></button>
-                                <button id="basemapToggle" data-popover-content="#po2" type="button" class="btn btn-blue-grey btn-sm" data-toggle="tooltip" data-placement="right" aria-pressed="false" autocomplete="off" title="Change Basemap"><i class="fas fa-globe-americas fa-2x"></i></button>
+                                <button id="HomeButton" type="button" class="btn btn-blue-grey btn-sm" aria-pressed="false" data-toggle="tooltip" data-placement="right" autocomplete="off" title="Reset Extent" data-html2canvas-ignore="true" ><i class="fas fa-home fa-2x" ></i></button>
+                                <button id="basemapToggle" data-popover-content="#po2" type="button" class="btn btn-blue-grey btn-sm" data-toggle="tooltip" data-placement="right" aria-pressed="false" autocomplete="off" title="Change Basemap" data-html2canvas-ignore="true" ><i class="fas fa-globe-americas fa-2x"></i></button>
                             </div>
                         </div>
                     </div>
@@ -126,10 +154,11 @@
                         <div class="card p-2" id="panelCard">
                             <div class="pl-1 py-1 h5"><strong>Cancer and Nitrate Explorer</strong></div>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal"
-                                    data-target="#modalDescription" id="seeDescbtn">See Description</button>
-                            <div class="pl-1 mt-4 h6">New Analysis</div>
-                            <form class="form-horizontal" onsubmit="return false;">
+                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#modalDescription" id="seeDescbtn" data-html2canvas-ignore="true" >See Description</button>
+                            <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#modalPrintScreen" id="seePrintScreenbtn" data-html2canvas-ignore="true" >Print Map View to PNG</button>
+                            <!-- Analysis -->
+                            <div class="pl-1 mt-4 h6" data-html2canvas-ignore="true" >New Analysis</div>
+                            <form class="form-horizontal" onsubmit="return false;" data-html2canvas-ignore="true" >
                                 <div class="form-group">
                                     <div class="input-group input-group-sm mb-3 pl-1 pr-1">
                                         <input type="number" min="1" pattern="[0-9]"
@@ -148,6 +177,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <!-- Legend -->
                             <div class="pl-1 mt-4 h6 py-1">Layers</div>
                             <div class="claro">
                                 <div class="container" >
@@ -206,10 +236,15 @@
 <!-- material design bootstrap core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
 <!--<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>-->
+
+<!--html2canvas-->
+<script type="text/javascript" src="js/html2canvas.min.js"></script>
+
 <!--ARCGIS JAVASCRIPT 3.XX (2D only)-->
 <script>var dojoConfig = { parseOnLoad: true };</script>
 <script src="https://js.arcgis.com/3.27/"></script>
 <!--my scripts-->
+
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

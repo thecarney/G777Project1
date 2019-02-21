@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71722d88-2ff2-4b9e-a68c-e75468b73b3a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,24 +19,52 @@
     <SUITE FILE_PATH="coverage/G777Project1$index_html.dat" NAME="index.html Coverage Results" MODIFIED="1549069084073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="WipCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+            <state relative-caret-position="199">
+              <caret line="548" column="56" selection-start-line="548" selection-start-column="56" selection-end-line="548" selection-end-column="56" />
               <folding>
-                <element signature="e#3608#4236#0" />
+                <element signature="e#2229#2303#0" />
+                <element signature="e#2395#3491#0" />
+                <element signature="e#3639#4336#0" />
+                <element signature="e#4433#5025#0" />
+                <element signature="e#5142#5346#0" />
+                <element signature="e#5448#6151#0" />
+                <element signature="e#6248#8568#0" />
+                <element signature="e#8700#8948#0" />
+                <element signature="e#9042#9603#0" />
+                <element signature="e#9691#12573#0" />
+                <element signature="e#12695#15586#0" />
+                <element signature="e#15750#22125#0" />
+                <element signature="e#22221#24141#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://C:/TEMP777/PROJ1/P1APP/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="48">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="124" column="146" selection-start-line="124" selection-start-column="146" selection-end-line="124" selection-end-column="146" />
+              <folding>
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,6 +84,7 @@
       <find>legendDiv</find>
       <find>requestSend</find>
       <find>errback</find>
+      <find>z</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -64,24 +95,23 @@
       <list>
         <option value="$PROJECT_DIR$/js/1.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/html2canvas.min.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="C:/TEMP777/PROJ1/P1APP/index.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="C:/TEMP777/PROJ1/P1APP/index.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2254" />
-    <option name="y" value="27" />
-    <option name="width" value="974" />
-    <option name="height" value="1163" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1934" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,6 +138,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,22 +208,26 @@
       <workItem from="1549036321899" duration="4719000" />
       <workItem from="1549051686084" duration="81279000" />
       <workItem from="1549344018847" duration="73615000" />
+      <workItem from="1549787740305" duration="610000" />
+      <workItem from="1549840151769" duration="23000" />
+      <workItem from="1550678272982" duration="11215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188744000" />
+    <option name="totallyTimeSpent" value="200592000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1186" extended-state="6" />
+    <frame x="-7" y="0" width="1934" height="1177" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14225501" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14240506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953465" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.328585" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" weight="0.15384616" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4989059" visible="true" weight="0.24233717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -237,13 +272,7 @@
     <entry file="file://$PROJECT_DIR$/data/wellNitrate_wm.geojson">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/hex50cancer.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret column="449" lean-forward="true" selection-start-column="428" selection-end-column="449" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/hex50cancer.geojson" />
     <entry file="file://$PROJECT_DIR$/data/resultsTemplate.geojson">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -251,26 +280,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
+        <state relative-caret-position="288">
           <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-      <provider selected="true" editor-type-id="httpFileEditor" />
+    <entry file="file://$PROJECT_DIR$/js/html2canvas.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://C:/TEMP777/PROJ1/P1APP/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="https://js.arcgis.com/3.27/dojox/gfx/svg.js">
+      <provider selected="true" editor-type-id="httpFileEditor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-467">
-          <caret line="56" column="29" lean-forward="true" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
+        <state relative-caret-position="468">
+          <caret line="124" column="146" selection-start-line="124" selection-start-column="146" selection-end-line="124" selection-end-column="146" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#3604#3611#1" expanded="true" />
             <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
@@ -281,11 +319,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+        <state relative-caret-position="199">
+          <caret line="548" column="56" selection-start-line="548" selection-start-column="56" selection-end-line="548" selection-end-column="56" />
           <folding>
-            <element signature="e#3608#4236#0" />
+            <element signature="e#2229#2303#0" />
+            <element signature="e#2395#3491#0" />
+            <element signature="e#3639#4336#0" />
+            <element signature="e#4433#5025#0" />
+            <element signature="e#5142#5346#0" />
+            <element signature="e#5448#6151#0" />
+            <element signature="e#6248#8568#0" />
+            <element signature="e#8700#8948#0" />
+            <element signature="e#9042#9603#0" />
+            <element signature="e#9691#12573#0" />
+            <element signature="e#12695#15586#0" />
+            <element signature="e#15750#22125#0" />
+            <element signature="e#22221#24141#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/TEMP777/PROJ1/P1APP/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
